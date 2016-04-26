@@ -15,6 +15,10 @@ machine:
     # CI_BOT_EMAIL: mybot@mydomain.com
     # CI_BOT_NAME: My Bot
 
+dependencies:
+  pre:
+    - echo "date.timezone = America/New_York" > /opt/circleci/php/$(phpenv global)/etc/conf.d/timezone.ini
+
 test:
   pre:
     - disable-php-email
